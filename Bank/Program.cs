@@ -40,7 +40,7 @@ namespace Bank
             this.balance = 0;
         }
 
-        public Customer(string f_name, string l_name, string acc_num, string acc_type)
+        public Customer(string f_name, string l_name, char gender, string acc_num, string acc_type, string currency, double initial_balance, double balance)
         {
             this.f_name = f_name;
             this.l_name = l_name;
@@ -96,6 +96,10 @@ namespace Bank
             {
                 Console.WriteLine("Amount to Withdraw: ");
                 double amt = Convert.ToDouble(Console.ReadLine());
+                if (amt == 0)
+                {
+                    Console.WriteLine("You need to deposit amount more than 0");
+                }
                 cust01.withdrawOperation(amt);
             }
 
